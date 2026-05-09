@@ -1,0 +1,429 @@
+<!-- Save as index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayush Kamboj | Portfolio</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    header{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      background:#111827;
+      padding:15px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:1000;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+      color:#38bdf8;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#38bdf8;
+    }
+
+    section{
+      min-height:100vh;
+      padding:100px 8%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    /* HOME */
+    .home{
+      text-align:center;
+    }
+
+    .home h1{
+      font-size:55px;
+    }
+
+    .home span{
+      color:#38bdf8;
+    }
+
+    .home p{
+      margin:20px 0;
+      font-size:20px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 25px;
+      background:#38bdf8;
+      color:black;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:bold;
+      transition:0.3s;
+      margin-top:10px;
+    }
+
+    .btn:hover{
+      background:white;
+      transform:scale(1.05);
+    }
+
+    /* ABOUT */
+    .about-container{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      max-width:350px;
+      border-radius:20px;
+      border:4px solid #38bdf8;
+    }
+
+    .about-text h2,
+    .projects h2,
+    .contact h2{
+      font-size:40px;
+      margin-bottom:20px;
+      color:#38bdf8;
+    }
+
+    /* SKILLS */
+    .skills{
+      margin-top:20px;
+    }
+
+    .skill{
+      margin-bottom:15px;
+    }
+
+    .skill-name{
+      margin-bottom:5px;
+    }
+
+    .skill-bar{
+      width:100%;
+      height:10px;
+      background:#334155;
+      border-radius:10px;
+    }
+
+    .skill-fill{
+      height:100%;
+      background:#38bdf8;
+      border-radius:10px;
+    }
+
+    /* PROJECTS */
+    .project-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .project-card{
+      background:#1e293b;
+      padding:20px;
+      border-radius:15px;
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 15px #38bdf8;
+    }
+
+    .project-card h3{
+      color:#38bdf8;
+      margin-bottom:10px;
+    }
+
+    /* CONTACT */
+    form{
+      max-width:500px;
+      margin:auto;
+      width:100%;
+    }
+
+    form input,
+    form textarea{
+      width:100%;
+      padding:12px;
+      margin-bottom:15px;
+      border:none;
+      border-radius:8px;
+      outline:none;
+    }
+
+    form button{
+      border:none;
+      cursor:pointer;
+    }
+
+    .social-links{
+      margin-top:20px;
+      text-align:center;
+    }
+
+    .social-links a{
+      color:white;
+      font-size:25px;
+      margin:0 10px;
+      transition:0.3s;
+    }
+
+    .social-links a:hover{
+      color:#38bdf8;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111827;
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+
+      .about-container{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .home h1{
+        font-size:38px;
+      }
+
+      nav{
+        display:none;
+      }
+    }
+
+    /* Animation */
+    .hidden{
+      opacity:0;
+      transform:translateY(50px);
+      transition:all 1s;
+    }
+
+    .show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Portfolio</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section class="home hidden" id="home">
+    <h1>Hello, I'm <span>Ayush Kamboj</span></h1>
+    <p>B.Tech CSE (AI/ML) Student | Web Developer | AI Enthusiast</p>
+
+    <a href="resume.pdf" class="btn" download>Download Resume</a>
+
+    <div class="social-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about hidden" id="about">
+
+    <div class="about-container">
+
+      <div>
+        <img src="https://via.placeholder.com/350" alt="profile">
+      </div>
+
+      <div class="about-text">
+        <h2>About Me</h2>
+
+        <p>
+          I am Ayush Kamboj, a B.Tech student specializing in
+          Artificial Intelligence and Machine Learning.
+          I am passionate about AI, web development,
+          and innovative technology projects.
+        </p>
+
+        <div class="skills">
+
+          <div class="skill">
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width:90%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-name">CSS</div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width:85%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width:75%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-name">Python</div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width:80%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects hidden" id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="project-container">
+
+      <div class="project-card">
+        <h3>Smart Auto Irrigation System</h3>
+        <p>
+          IoT based irrigation system using sensors and automation
+          to save water and improve farming efficiency.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Interactive AI</h3>
+        <p>
+          AI based interactive application using machine learning
+          and intelligent responses.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>
+          Responsive personal portfolio website using HTML,
+          CSS, and JavaScript.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact hidden" id="contact">
+
+    <h2>Contact Me</h2>
+
+    <form id="contactForm">
+
+      <input type="text" id="name" placeholder="Your Name">
+
+      <input type="email" id="email" placeholder="Your Email">
+
+      <textarea id="message" rows="5"
+        placeholder="Your Message"></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+
+    </form>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Ayush Kamboj | All Rights Reserved</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // Form Validation
+    document.getElementById("contactForm")
+    .addEventListener("submit", function(e){
+
+      e.preventDefault();
+
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let message = document.getElementById("message").value;
+
+      if(name === "" || email === "" || message === ""){
+        alert("Please fill all fields");
+      }
+      else{
+        alert("Message Sent Successfully!");
+      }
+
+    });
+
+    // Scroll Animation
+    const hiddenElements = document.querySelectorAll('.hidden');
+
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    hiddenElements.forEach((el)=> observer.observe(el));
+
+  </script>
+
+</body>
+</html>
